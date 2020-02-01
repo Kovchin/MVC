@@ -3,6 +3,9 @@
 //обозначаем пространство имен
 namespace application\core;
 
+//Для перенаправление на страницы ошибок
+use application\core\View;
+
 //объявляем класс Router
 class Router
 {
@@ -49,13 +52,19 @@ class Router
                     $controller = new $path($this->params);
                     $controller->$action();
                 } else {
-                    echo 'action не найден: ' . $action;
+                    //перенаправление на страницу ошибки application\views\errors
+                    //Не найден action
+                    View::errorCode(404);
                 }
             } else {
-                echo 'Не найден controller: ' . $path;
+                //перенаправление на страницу ошибки application\views\errors
+                //Не найден контроллер
+                View::errorCode(403);
             }
         } else {
-            echo 'Маршрут не найден';
+            //перенаправление на страницу ошибки application\views\errors
+            //Не найден маршрут
+            View::errorCode(402);
         }
     }
 }
