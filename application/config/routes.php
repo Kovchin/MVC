@@ -21,6 +21,7 @@ return [
         'controller' => 'main',
         'action' => 'db'
     ],
+
     //Второй уровень вложения страниц в нем содержится явное указание action и controller
     'account/login' => [
         'controller' => 'account',

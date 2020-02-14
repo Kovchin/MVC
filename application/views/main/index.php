@@ -13,6 +13,7 @@
     <p><?= $value['description']; ?> </p>
     <hr>
 <?php endforeach; ?>
+
 <h2>Доступные страницы</h2>
 
 
@@ -23,3 +24,5 @@
 <p><a href="./db" target="blanc">Страница базы данных</a></p>
 <h3>Просто внешняя ссылка</h3>
 <p><a href="http:\\www.mail.ru" target="blanc">Почта</a></p>
+
+<p><a href="https://youtu.be/fQjbt4Nnso4?t=1171" target="blank">Ссылка на текущий фрагмент</a></p>

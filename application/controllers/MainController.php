@@ -3,6 +3,8 @@
 namespace application\controllers;
 
 use application\core\Controller;
+//Нужно разобраться и удалить строку ниже так как при формировании страницы происходит двойное подключение к базам данных
+//Так же стоит поменять require на require_once в файле application\lib\Db.php 18-я строка
 use application\lib\Db;
 
 class MainController extends Controller
@@ -41,6 +43,6 @@ class MainController extends Controller
 
     public function contactAction()
     {
-        echo 'Cтраница контактов';
+        echo 'Cтраница контактов<br>';
     }
 }

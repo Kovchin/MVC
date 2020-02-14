@@ -15,7 +15,13 @@ class Db
     public function __construct()
     {
         //Получаем базу данных 
-        $config = require_once './application/config/db.php';
+        $config = require './application/config/db.php';
+        /* 
+//Данные для отладки подключения к базе данных
+        echo 'db: ' . $config['dbname'] . '<br>';
+        echo 'user: ' . $config['user'] . '<br>';
+        echo 'password: ' . $config['password'] . '<br>';
+*/
         $this->db = new PDO('mysql:host=MVC;dbname=' . $config['dbname'] . '', $config['user'], $config['password']);
     }
 
