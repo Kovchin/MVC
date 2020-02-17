@@ -13,6 +13,7 @@ abstract class Controller
     public function __construct($route)
     {
         $this->route = $route;
+        $this->checkAcl();
         $this->view = new View($route);
         $this->model = $this->LoadModel($route['controller']);
     }
@@ -23,5 +24,11 @@ abstract class Controller
         if (class_exists($path)) {
             return new $path;
         }
+    }
+
+    public function checkAcl()
+    {
+        $acl = require 'application\acl\\' . $this->route['controller'] . '.php';
+        debug($acl);
     }
 };
